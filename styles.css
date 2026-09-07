@@ -256,6 +256,62 @@ h1, h2, h3 { font-family: var(--ff-display); font-weight: 600; margin: 0; }
 }
 .fact p { margin: 0; font-size: 0.94rem; color: var(--ink-soft); }
 
+.known-for {
+  margin-top: 50px;
+  padding-top: 40px;
+  border-top: 1px solid var(--line);
+}
+.known-for h3 {
+  font-family: var(--ff-body);
+  font-size: 0.78rem;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  color: var(--accent);
+  font-weight: 700;
+  margin-bottom: 20px;
+}
+.known-for ul {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 16px 40px;
+}
+.known-for li {
+  display: flex;
+  gap: 10px;
+  font-size: 0.98rem;
+  color: var(--ink-soft);
+  line-height: 1.5;
+}
+.known-for-icon {
+  color: var(--accent);
+  font-weight: 700;
+  flex-shrink: 0;
+}
+
+/* COMPANY INFO (details/summary) */
+.company-info {
+  margin: 4px 0 18px;
+}
+.company-info summary {
+  cursor: pointer;
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: var(--accent);
+  list-style: none;
+  display: inline-block;
+}
+.company-info summary::-webkit-details-marker { display: none; }
+.company-info summary:hover { text-decoration: underline; }
+.company-info p {
+  margin: 10px 0 0;
+  font-size: 0.9rem;
+  color: var(--ink-soft);
+  max-width: 620px;
+  padding: 12px 16px;
+  background: var(--accent-soft);
+  border-radius: 10px;
+}
+
 /* PROJECT */
 .project-card {
   display: grid;
@@ -439,6 +495,7 @@ h1, h2, h3 { font-family: var(--ff-display); font-weight: 600; margin: 0; }
 /* RESPONSIVE */
 @media (max-width: 860px) {
   .about-grid, .project-card { grid-template-columns: 1fr; }
+  .known-for ul { grid-template-columns: 1fr; }
   .skills-grid { grid-template-columns: 1fr; }
   .hero-stats { grid-template-columns: repeat(2, 1fr); }
   .project-card-visual { order: -1; }
