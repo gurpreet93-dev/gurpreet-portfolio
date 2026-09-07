@@ -415,6 +415,7 @@ h1, h2, h3 { font-family: var(--ff-display); font-weight: 600; margin: 0; }
   white-space: nowrap;
 }
 .timeline-org { color: var(--ink-soft); font-weight: 500; margin: 4px 0 14px; font-size: 0.95rem; }
+.timeline-context { color: var(--ink-soft); font-style: italic; margin: -8px 0 14px; font-size: 0.9rem; }
 .timeline-content ul { display: grid; gap: 10px; }
 .timeline-content li {
   padding-left: 20px;
