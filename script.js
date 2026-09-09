@@ -29,24 +29,10 @@ const observer = new IntersectionObserver(
 );
 revealEls.forEach((el) => observer.observe(el));
 
-document.querySelectorAll('.timeline-collapsible').forEach((el) => {
-  const collapsedHeight = parseFloat(getComputedStyle(el).maxHeight);
-  if (el.scrollHeight <= collapsedHeight + 8) return;
-
-  el.classList.add('has-toggle');
-
-  const btn = document.createElement('button');
-  btn.className = 'timeline-toggle';
-  btn.type = 'button';
-  btn.setAttribute('aria-expanded', 'false');
-  btn.innerHTML = 'Show full role details <span class="timeline-toggle-icon">↓</span>';
-  el.insertAdjacentElement('afterend', btn);
-
+document.querySelectorAll('.exp-row-header').forEach((btn) => {
   btn.addEventListener('click', () => {
-    const isExpanded = el.classList.toggle('expanded');
+    const row = btn.closest('.exp-row');
+    const isExpanded = row.classList.toggle('expanded');
     btn.setAttribute('aria-expanded', String(isExpanded));
-    btn.innerHTML = isExpanded
-      ? 'Show less <span class="timeline-toggle-icon">↓</span>'
-      : 'Show full role details <span class="timeline-toggle-icon">↓</span>';
   });
 });
